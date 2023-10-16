@@ -1,0 +1,33 @@
+.mainContainer {
+	display: flex;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(circle, rgba(60,60,104,1) 0%, rgba(6,1,31,1) 100%);
+	align-content: center;
+}
+
+.layers {
+	
+	display: block;
+	border: 1px solid red;
+	position: relative;
+    margin: auto;
+}
+
+.image {
+	width: 40%;
+	border: 1px solid green;
+
+}
+
+.glow {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	box-shadow:
+    0 0 60px 30px #fff,  /* inner white */
+    0 0 100px 60px #f0f, /* middle magenta */
+    0 0 140px 90px #0ff; /* outer cyan */
+
+}
