@@ -49,8 +49,10 @@
 }
 
 .detailContainer {
-    min-width: 300px;
+    text-align: left;
+    min-width: 200px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin-left: 10px;
     margin-right: 10px;

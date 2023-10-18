@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    height: 150px;
+    min-height: 150px;
     width: 100vw;
     overflow: hidden;
     position: fixed;

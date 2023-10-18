@@ -7,15 +7,7 @@ import styles from './VolunteerContainer.module.css';
 
 const Footer = () => {
 
-    const handleSelectChange = (selectedValue) => {
-    console.log('Selected Value:', selectedValue);
-    setFormData({
-      ...formData,
-      job: selectedValue,
-    });
-    // You can handle the selected value here
-  };
-
+  
 const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +15,7 @@ const [formData, setFormData] = useState({
     message: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -31,8 +23,16 @@ const [formData, setFormData] = useState({
     });
   };
 
+  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const { name, value } = e.target;
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
+};
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // You can handle the form submission logic here, e.g., sending data to a server
     console.log(formData);
@@ -118,12 +118,11 @@ const [formData, setFormData] = useState({
             <div className={styles.formContainer}>
                 <label className={styles.formLabel} htmlFor="email">Wiadomość:</label>
                 <textarea
-                  type="text"
-                  id="email"
+                  id="message"
                   name="message"
                   required
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={handleTextareaChange}
                   className={`${styles.textfield} ${styles.textfield2}`}
                 />
             </div>

@@ -10,7 +10,7 @@ const Footer = () => {
 
     let [listToggled, setListToggled] = useState(false);
 
-    const [isHidden, setIsHidden] = useState(null);
+    const [isHidden, setIsHidden] = useState<null | boolean>(null);
 
 useEffect(() => {
     // Function to update screenWidth when the window is resized
