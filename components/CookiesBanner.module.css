@@ -1,0 +1,81 @@
+/* FullSizeContainer.css */
+
+.container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    height: 150px;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    background: #0000002a;
+    backdrop-filter: blur(10px);
+    bottom: 0;
+    padding: 20px;
+    gap: 10px;
+    z-index: 100;
+
+}
+
+.subcontainer {
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.accept {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    
+}
+
+.accept:hover {
+    background: #D5D5D5;
+}
+
+.accept:active {
+    background: #B8B8B8;
+}
+
+.decline {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #33a6f6;
+    color: white;
+}
+
+.decline:hover {
+    background: #2A89CB;
+}
+
+.decline:active {
+    background: #2474AB;
+}
+
+
+@media (max-width: 768px) {
+
+    .container {
+        height: 180px;
+    }
+
+}
+
+.unvisible {
+    display: none;
+}
+
+
+
+

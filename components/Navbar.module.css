@@ -1,0 +1,159 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	font-family: Lato;
+
+}
+
+.mainContainer {
+	display: flex;
+	width: 100vw;
+	height: 90px;
+
+}
+
+.logo {
+	height: 65%;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.image {
+	height: 100%;
+	padding-right: 20px;
+}
+
+.tabs {
+	display: flex;
+	margin: auto;
+	gap: 30px;
+	height: 40px;
+
+
+}
+
+.tabBtn {
+	width: 60px;
+	height: 100%;
+	color: white;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.tabBtn:hover {
+	font-weight: bold;
+	border-bottom: 3px solid white;
+}
+
+.tabBtn:active {
+	color: #33a6f6;
+	border-bottom: 3px solid #33a6f6;
+}
+
+#btn1 {
+	width: 85px;
+}
+
+
+.menuBtn {
+	display: none;
+	height: 40px;
+	width: 40px;
+	min-height: 40px;
+	min-width: 40px;
+	background: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: 40px;
+	border: none;
+	align-content: center;
+}
+
+.menuImg {
+	width: 80%;
+}
+
+.login {
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+	justify-content: flex-end;
+	margin-right: 40px;
+	gap: 20px;
+	visibility: hidden;
+}
+
+.loginBtn {
+	width: 80px;
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+}
+
+.loginBtn:hover {
+	background: #D5D5D5;
+}
+
+.loginBtn:active {
+	background: #B8B8B8;
+}
+
+.registerBtn {
+	width: 80px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	background: #33a6f6;
+	color: white;
+}
+
+.registerBtn:hover {
+	background: #2A89CB;
+}
+
+.registerBtn:active {
+	background: #2474AB;
+}
+
+.menuList {
+	display: none;
+	color: white;
+	text-align: center;
+
+}
+
+.listElement {
+	padding: 10px;
+}
+
+.blurred {
+	background: none;
+}
+
+@media (max-width: 800px){
+	.login {
+		display: none;
+	}
+
+	.tabs {
+		display: none;
+	}
+
+	.menuBtn {
+		display: block;
+	}
+
+	.menuList {
+		display: block;
+	}
+
+	.blurred {
+		background: #0000002a;
+		backdrop-filter: blur(10px);
+	}
+
+
+}

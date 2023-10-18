@@ -1,0 +1,114 @@
+.mainContainer {
+    color: white;
+    font-family: Montserrat;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    min-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    gap: 30px;
+
+    
+}
+
+.box {
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 300px;
+}
+
+.image {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 2px solid white;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mainTitle {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.box2 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    width: 300px;
+    border: 3px solid white;
+    border-radius: 145px 145px 20px 20px;
+    background: #0000004a;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.image2 {
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 145px;
+}
+
+.boxTitle2 {
+    margin-top: 30px;
+
+}
+
+.titleBox {
+    font-size: 24px;
+    margin-top: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 2px solid white;
+
+}
+
+.subContainer2 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 2px solid white;
+}
+

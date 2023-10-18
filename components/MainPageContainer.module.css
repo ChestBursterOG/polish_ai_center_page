@@ -1,0 +1,109 @@
+.mainContainer {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 100vh;
+}
+
+.title {
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.subtitle {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat';
+}
+
+.subContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    gap: 30px;
+}
+
+.box {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    width: 300px;
+    border: 3px solid white;
+    border-radius: 145px 145px 20px 20px;
+    background: #0000004a;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.image {
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 145px;
+}
+
+.boxTitle {
+    margin-top: 30px;
+
+}
+
+.unvisible {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.pTitle {
+    width: 300px;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pContainer {
+    display: flex;
+    width: 300px;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.pImage {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.pMainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 30px;
+}

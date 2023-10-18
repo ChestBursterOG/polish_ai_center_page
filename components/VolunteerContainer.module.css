@@ -1,0 +1,100 @@
+.mainContainer {
+    color: white;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 20px;
+    
+}
+
+.titleBox {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 2px solid white;
+
+}
+
+.encourageBox {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 2px solid white;
+}
+
+.formContainer {
+    display: flex;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.formLabel {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 20px;
+    text-align: right;
+    width: 150px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+}
+
+.textfield {
+    width: 100%;
+    color: white;
+    background: none;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: inset 0px 0px 5px white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.textfield2 {
+    height: 100px;
+}
+
+.send {
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #33a6f6;
+    color: white;
+    margin-left: auto;
+}
+
+.send:hover {
+    background: #2A89CB;
+}
+
+.send:active {
+    background: #2474AB;
+}

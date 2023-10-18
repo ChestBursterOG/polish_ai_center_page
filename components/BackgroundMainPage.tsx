@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './Background.module.css'
+import styles from './BackgroundMainPage.module.css'
 
 const Footer = () => {
 
