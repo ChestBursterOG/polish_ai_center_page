@@ -27,7 +27,7 @@ const Footer = () => {
     return (
         <div className={styles.mainContainer}>
             <p className={styles.title}>Tworzymy przyszłość dzięki sztucznej inteligencji</p>
-            <p className={styles.subtitle}>Przekraczamy granice wiedzy, by uczynić technologię dostępną dla każdego. Razem budujemy nową erę innowacji i edukacji</p>
+            <p className={styles.subtitle}>Przekraczamy granice wiedzy, by uczynić technologię dostępną dla każdego. Nasza fundacja buduje nową erę innowacji i edukacji</p>
             <div className={`${styles.subContainer} ${isVisible ? styles.unvisible : styles.visible}`}>
                 <div className={styles.box}>
                     <img className={styles.image} src="/mainpage/education.png" />
