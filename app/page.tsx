@@ -7,12 +7,15 @@ import Footer from "@/components/Footer"
 import CookiesBanner from "@/components/CookiesBanner"
 import MainPageContainer from "@/components/MainPageContainer"
 import '../styles/globals.css'
+import GoogleAnalytics from "@/components/GoogleAnalytics"
+
 
 
 export default function Home() {
 
   return (
     <main className={styles.mainContainer}>
+      <GoogleAnalytics />
       <BackgroundMainPage />
       <Navbar />
       <MainPageContainer />
