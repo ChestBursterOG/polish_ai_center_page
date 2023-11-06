@@ -6,16 +6,18 @@ import Background from "@/components/Background"
 import AboutContainer from "@/components/AboutContainer"
 import '../styles/globals.css'
 import GoogleAnalytics from "@/components/GoogleAnalytics"
+import Layout from "@/components/Layout"
+import MetaTags from "@/components/MetaTags"
 
 export default function Home() {
   return (
     <main className={styles.mainContainer}>
-      <GoogleAnalytics />
-      <Background />
-      <Navbar />
-      <AboutContainer />
-      <Footer />
-
+      <Layout>
+        <MetaTags title="O nas"/>
+        <GoogleAnalytics />
+        <Background />
+        <AboutContainer />
+      </Layout>
     </main>
   )
 }

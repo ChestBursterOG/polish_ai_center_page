@@ -53,7 +53,7 @@ const Footer = () => {
                         </div>
                         <div className={styles.detailContainer}>
                             <p className={styles.detail}>Tryb:</p>
-                            <p>Online</p>
+                            <p>Stacjonarnie</p>
                         </div>
                         <p className={styles.eventDescription}>Marzysz o opanowaniu tajników marketingu, które przyciągną uwagę, zainspirują i przekonają każdego klienta? Nasze szkolenie z marketingu to klucz do odkrywania kreatywnych strategii, nowoczesnych narzędzi i najnowszych trendów, które sprawią, że Twoje kampanie staną się niezapomniane. Dołącz do naszej pasjonującej podróży przez świat marketingowych innowacji, gdzie poznasz nie tylko teorię, ale także praktyczne umiejętności, które pomogą Ci odnieść sukces w dzisiejszym konkurencyjnym świecie biznesu. Bądź liderem w swojej branży - zaczynaj swoją przygodę z marketingiem już teraz!</p>
                     </div>

@@ -1,25 +1,19 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import Background from "@/components/Background"
-import ProjectsContainer from "@/components/ProjectsContainer"
-import '../styles/globals.css'
+import CVContainer from "@/components/CVContainer"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
-import LoadingScreenController from "@/components/LoadingScreenController"
 import MetaTags from "@/components/MetaTags"
 
 export default function Home() {
   return (
     <main className={styles.mainContainer}>
-    <MetaTags title="Projekty" />
       <GoogleAnalytics />
-      <LoadingScreenController />
-      <Background />
+      <MetaTags title="Dołącz do nas"/>
       <Navbar />
-      <ProjectsContainer />
-      <Footer />
-
+      <Background />
+      <CVContainer />
     </main>
   )
 }

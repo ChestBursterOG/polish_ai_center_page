@@ -1,8 +1,18 @@
+.superContainer {
+	height: 90px;
+	
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
 	width: 100vw;
 	font-family: Lato;
+	background: #0000004a;
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0px;
+	z-index: 20;
 
 }
 
@@ -54,6 +64,10 @@
 
 #btn1 {
 	width: 85px;
+}
+
+#btn2 {
+	width: 90px;
 }
 
 

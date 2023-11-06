@@ -1,25 +1,24 @@
-import Image from 'next/image'
+import React  from 'react';
 import styles from './page.module.css'
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import Background from "@/components/Background"
-import ProjectsContainer from "@/components/ProjectsContainer"
+import CookiesBanner from "@/components/CookiesBanner"
 import '../styles/globals.css'
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import LoadingScreenController from "@/components/LoadingScreenController"
-import MetaTags from "@/components/MetaTags"
 
-export default function Home() {
+const Layout = ({ children }) => {
   return (
-    <main className={styles.mainContainer}>
-    <MetaTags title="Projekty" />
+    <div>
       <GoogleAnalytics />
       <LoadingScreenController />
-      <Background />
       <Navbar />
-      <ProjectsContainer />
+      <main>{children}</main>
       <Footer />
+      <CookiesBanner />
 
-    </main>
-  )
-}
+    </div>
+  );
+};
+
+export default Layout;
