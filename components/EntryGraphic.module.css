@@ -1,0 +1,117 @@
+.mainContainer {
+    position: fixed;
+    flex-direction: row;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    z-index: 4000;
+    border: 2px solid white;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 32px 16px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.backgroundVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.stackContainer {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.titleContainer {
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.blurredBackground {
+    left: 0%;
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: #00000070;
+    backdrop-filter: blur(6px);
+    z-index: 4001;
+}
+
+.details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.encourage {
+    /* Your styles for encourage text */
+}
+
+.join {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #33a6f6;
+    color: white;
+    margin-left: auto;
+}
+
+.join:hover {
+    background: #2A89CB;
+}
+
+.join:active {
+    background: #2474AB;
+}
+
+.close {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 4002;
+}
+
+.close:hover {
+    background: #2A89CB;
+}
+
+.close:active {
+    background: #2474AB;
+}

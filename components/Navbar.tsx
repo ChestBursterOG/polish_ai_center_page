@@ -37,8 +37,11 @@ const Navbar = () => {
 						<Link href="/education">
 							<button className={styles.tabBtn}>Edukacja</button>
 						</Link>
-						<Link href="/volunteer">
+						<Link href="/encourage">
 							<button className={styles.tabBtn} id={styles.btn1}>Wolontariat</button>
+						</Link>
+						<Link href="/volunteer">
+							<button className={styles.tabBtn}>Kontakt</button>
 						</Link>
 						<Link href="/join">
 							<button className={styles.tabBtn} id={styles.btn2}>Dołącz do nas</button>
@@ -63,8 +66,11 @@ const Navbar = () => {
 						<Link href="/education">
 							<li className={styles.listElement}>Edukacja</li>
 						</Link>
-						<Link href="/volunteer">
+						<Link href="/encourage">
 							<li className={styles.listElement}>Wolontariat</li>
+						</Link>
+						<Link href="/volunteer">
+							<li className={styles.listElement}>Kontakt</li>
 						</Link>
 						<Link href="/join">
 							<li className={styles.listElement}>Dołącz do nas</li>

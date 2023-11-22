@@ -1,11 +1,32 @@
 "use client";
 import {useState, useEffect} from 'react';
 import styles from './MainPageContainer.module.css';
+import Slider from '@/components/Slider';
+import EntryGraphic from './EntryGraphic';
 
 
 const Footer = () => {
 
+  const initialVisibility = localStorage.getItem('isVisible') === 'true';
+
     const [isVisible, setVisible] = useState(true);
+
+    const images = [
+      './mainpage/development.png',
+      './mainpage/education.png',
+      './mainpage/team.jpg',
+      './mainpage/training.png',
+    ];
+
+    const scrollDown = () => {
+      const windowHeight = window.innerHeight;
+      const newScrollPosition = window.scrollY + windowHeight - windowHeight* 0.2;
+  
+      window.scrollTo({
+        top: newScrollPosition,
+        behavior: 'smooth',
+      });
+    };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +44,31 @@ const Footer = () => {
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('isVisible', isVisible);
+  }, [isVisible]);
+
 
     return (
         <div className={styles.mainContainer}>
+          <EntryGraphic/>
             <p className={styles.title}>Tworzymy przyszłość dzięki sztucznej inteligencji</p>
-            <p className={styles.subtitle}>Przekraczamy granice wiedzy, by uczynić technologię dostępną dla każdego. Nasza fundacja buduje nową erę innowacji i edukacji</p>
+            <p className={styles.subtitle}>Przekraczamy granice wiedzy, by uczynić technologię dostępną dla każdego. Nasza fundacja buduje nową erę innowacji i edukacji</p>        
+            <div className={styles.encourageMainContainer}>
+              <div className={styles.encourageContainer} id={styles.id1}>
+                  <img className={styles.eImage} src="/mainpage/signup-training.jpg" />
+                  <button className={styles.eButton}>Zapisz się na szkolenie</button>
+              </div>
+              <div className={styles.encourageContainer} id={styles.id2}>
+                  <img className={styles.eImage} src="/mainpage/team.jpg" />
+                  <button className={styles.eButton}>Dołącz do zespołu</button>
+              </div>
+            </div> 
+            <div className={`${styles.scrollBackground} ${isVisible ? styles.visible : styles.unvisible}`}>
+              <div className={styles.scroll}>
+                <button className={styles.eButton} id={styles.scrollBtn} onClick={scrollDown}>Zobacz więcej</button>
+              </div>
+              </div>
             <div className={`${styles.subContainer} ${isVisible ? styles.unvisible : styles.visible}`}>
                 <div className={styles.box}>
                     <img className={styles.image} src="/mainpage/education.png" />
@@ -41,6 +82,12 @@ const Footer = () => {
                     <img className={styles.image} src="/mainpage/training.png" />
                     <p className={styles.boxTitle}>Szkolenia</p>
                 </div>
+            </div>
+            <p className={`${styles.description} ${isVisible ? styles.unvisible : styles.visible}`}><b>Polskie Centrum Sztucznej Inteligencji</b> to fundacja, która koncentruje się na promowaniu wiedzy i rozwijaniu kompetencji w zakresie AI wśród polskich instytucji i społeczeństwa. <br /><br />Działając na rzecz edukacji i innowacji, PCSI  angażuje się w różnorodne projekty badawcze, inicjatywy edukacyjne oraz wydarzenia, mające na celu podnoszenie świadomości znaczenia sztucznej inteligencji. Stanowimy platformę współpracy dla naukowców, technologów
+i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłości technologii AI w Polsce.</p>
+            <Slider images={images} />
+            <div>
+              <button className={styles.eButton} id={styles.centerButton}>Poznaj nasze projekty</button>
             </div>
             <p className={`${styles.pTitle} ${isVisible ? styles.unvisible : styles.visible}`}>Nasi partnerzy:</p>
             <div className={`${styles.pMainContainer} ${isVisible ? styles.unvisible : styles.visible}`}>

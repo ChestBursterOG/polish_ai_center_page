@@ -66,11 +66,23 @@
 .unvisible {
     opacity: 0;
     transition: opacity 0.5s ease;
+
 }
 
 .visible {
     opacity: 1;
     transition: opacity 0.5s ease;
+
+}
+
+.appear {
+    display: block;
+    transition: 0.5s ease;
+}
+
+.disappear {
+    display: none;
+    transition: 0.5s ease;
 }
 
 .pTitle {
@@ -109,3 +121,128 @@
     margin-right: auto;
     gap: 30px;
 }
+
+.description {
+
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    max-width: 1500px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.encourageContainer {
+    width: 200px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    top: 60%;
+}
+
+.eImage {
+    
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    
+}
+
+.encourageMainContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 40px;
+}
+
+#id1 {
+
+}
+
+#id2 {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.eButton {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #33a6f6;
+    color: white;
+    margin-left: auto;
+}
+
+#centerButton {
+    z-index: 60;
+    min-width: 400px;
+    width: 40%;
+}
+
+.eButton:hover {
+    background: #2A89CB;
+}
+
+.eButton:active {
+    background: #2474AB;
+}
+
+.scroll {
+    position: absolute;
+    
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    
+}
+
+.scrollBackground {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+    z-index: 500;
+}
+
+.discover {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #33a6f6;
+    color: white;
+    margin-left: auto;
+    z-index: 60;
+}
+
+.discover:hover {
+    background: #2A89CB;
+}
+
+.discover:active {
+    background: #2474AB;
+}
+
+
+#scrollBtn {
+    display: block;
+    margin: 0 auto;
+    min-width: 400px;
+    width: 40%;
+    z-index: 600;
+}
+

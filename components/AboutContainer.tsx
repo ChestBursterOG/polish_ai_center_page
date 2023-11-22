@@ -64,6 +64,10 @@ const Footer = () => {
                     <img className={styles.image2} src="/team/Arkadiusz.png" />
                     <p className={styles.boxTitle2}>Arkadiusz Firysiuk</p>
                 </div>
+                <div className={styles.box2}>
+                    <img className={styles.image2} src="/team/Katarzyna.png" />
+                    <p className={styles.boxTitle2}>Katarzyna Szawłoga</p>
+                </div>
             </div>
         </div>
     );

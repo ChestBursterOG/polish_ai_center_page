@@ -15,6 +15,8 @@ import LoadingScreenController from "@/components/LoadingScreenController"
 import Layout from "@/components/Layout"
 import MetaTags from "@/components/MetaTags"
 import type { Metadata } from 'next'
+
+
  
 export const metadata: Metadata = {
   title: 'PCSI',
@@ -23,20 +25,20 @@ export const metadata: Metadata = {
     icon: [{ url: '/CPU-lightnings.gif' }]
   },
   viewport: 'width=device-width, initial-scale=1.0',
-  author: 'PCSI',
+
   keywords: 'Sztuczna inteligencja, AI, innowacje iechnologiczne, technologie przyszłości, automatyzacja, świadomość, edukacja, rozwój',
   robots: 'index, follow',
   openGraph: {
     title: 'PCSI',
     description : 'PCSI - Polskie Centrum Sztucznej Inteligencji',
-    image: '/PCSI - logo.png',
+    images: '/PCSI - logo.png',
     url: 'https://www.polskiecentrumsi.pl',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PCSI',
     description: 'Technology driving your future',
-    image: '/PCSI - logo.png',
+    images: '/PCSI - logo.png',
   },
   
 }

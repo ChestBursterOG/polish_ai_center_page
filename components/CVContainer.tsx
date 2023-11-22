@@ -3,24 +3,51 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import styles from './CVContainer.module.css';
+import CustomSelect from './CustomSelect';
+import CustomSelect2 from './CustomSelect';
 
 
 const Footer = () => {
 
+  const regions = [
+    { label: 'Wrocław', value: 'Wrocław' },
+    { label: 'Bydgoszcz', value: 'Bydgoszcz' },
+    { label: 'Toruń', value: 'Toruń' },
+    { label: 'Lublin', value: 'Lublin' },
+    { label: 'Gorzów Wielkopolski', value: 'Gorzów Wielkopolski' },
+    { label: 'Zielona Góra', value: 'Zielona Góra' },
+    { label: 'Łódź', value: 'Łódź' },
+    { label: 'Kraków', value: 'Kraków' },
+    { label: 'Warszawa', value: 'Warszawa' },
+    { label: 'Rzeszów', value: 'Rzeszów' },
+    { label: 'Białystok', value: 'Białystok' },
+    { label: 'Gdańsk', value: 'Gdańsk' },
+    { label: 'Katowice', value: 'Katowice' },
+    { label: 'Kielce', value: 'Kielce' },
+    { label: 'Olsztyn', value: 'Olsztyn' },
+    { label: 'Poznań', value: 'Poznań' },
+    { label: 'Szczecin', value: 'Szczecin' },
+    { label: 'Opole', value: 'Opole' },
+    
+  ];
+
+  const industries = [
+    { label: 'Nowoczesne rolnictwo', value: 'Nowoczesne rolnictwo' },
+    { label: 'IT/AI', value: 'IT/AI' },
+    { label: 'Medycyna długowieczności', value: 'Medycyna długowieczności' },
+    { label: 'Badania laboratoryjne', value: 'Badania laboratoryjne' },
+    { label: 'Branża spożywcza', value: 'Branża spożywcza' },
+  ];
+
   
-const [formData, setFormData] = useState({
+
+  
+  const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
     email: '',
-    field1: '',
-    field2: '',
-    field3: '',
-    field4: '',
-    field5: '',
-    field6: '',
-    field7: '',
-    field8: '',
-    field9: '',
+    region: 'Lublin',
+    industry: 'IT/AI',
+    message: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +66,24 @@ const [formData, setFormData] = useState({
   });
 };
 
+const handleSelectChange = (id: number, value: string) => {
+  setFormData((prevFormData) => {
+    if (id === 0) {
+      return {
+        ...prevFormData,
+        region: value,
+      };
+    } else if (id === 1) {
+      return {
+        ...prevFormData,
+        industry: value,
+      };
+    }
+    return prevFormData;
+  });
+};
+
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,18 +93,11 @@ const [formData, setFormData] = useState({
     const dataToSend = {
       fields: {
         Name: formData.firstName,
-        Surname: formData.lastName,
         Email: formData.email,
+        Region: formData.region,
+        Industry: formData.industry,
         Message: formData.message,
-        Opis: formData.field1,
-        Preferencje: formData.field2,
-        Skills: formData.field3,
-        Why: formData.field4,
-        Values: formData.field5,
-        TeamWork: formData.field6,
-        Interests: formData.field7,
-        Future: formData.field8,
-        Society: formData.field9
+        
 
       },
     };
@@ -77,17 +115,9 @@ const [formData, setFormData] = useState({
       // Clear the form
       setFormData({
         firstName: '',
-        lastName: '',
         email: '',
-        field1: '',
-        field2: '',
-        field3: '',
-        field4: '',
-        field5: '',
-        field6: '',
-        field7: '',
-        field8: '',
-        field9: ''
+        message: '',
+        
       });
     } catch (error) {
       console.error('Error sending data:', error);
@@ -116,129 +146,38 @@ const [formData, setFormData] = useState({
                   />
               </div>
               <div className={styles.formContainer}>
-                  <label className={styles.formLabel} htmlFor="lastName">Nazwisko:</label>
+                  <label className={styles.formLabel} htmlFor="email">E-mail:</label>
                   <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
+                    type="email"
+                    id="email"
+                    name="email"
                     required
-                    value={formData.lastName}
+                    value={formData.email}
                     onChange={handleChange}
                     className={styles.textfield}
                   />
               </div>
             </div>
             <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="email">E-mail:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={styles.textfield}
-                />
+                <label className={styles.formLabel} htmlFor="region">Region:</label>
+                <CustomSelect options={regions} onChange={handleSelectChange} id={0} defaultValue={formData.region}/>
             </div>
             <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field1">Napisz krótki tekst analizujący zagadnienie, trend, który Cię interesuje w perspektywie lokalnej lub globalnej:</label>
+                <label className={styles.formLabel} htmlFor="industry">Branża:</label>
+                <CustomSelect2 options={industries} onChange={handleSelectChange} id={1} defaultValue={formData.industry}/>
+            </div>
+            <div className={styles.formContainer}>
+                <label className={styles.formLabel} htmlFor="message">Opisz nam krótko w czym się czujesz dobrze oraz co chciałbyś/chciałabyś robić:</label>
                 <textarea
-                  id="field1"
-                  name="field1"
+                  id="message"
+                  name="message"
                   required
-                  value={formData.field1}
+                  value={formData.message}
                   onChange={handleTextareaChange}
                   className={`${styles.textfield} ${styles.textfield2}`}
                 />
             </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field2">Napisz nam w czym się czujesz dobrze oraz co chciałbyś/chciałabyś robić:</label>
-                <textarea
-                  id="field2"
-                  name="field2"
-                  required
-                  value={formData.field2}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field3">Czy posiadasz jakieś specjalne umiejętności lub doświadczenie, które mogą być przydatne w pracy wolonariusza?</label>
-                <textarea
-                  id="field3"
-                  name="field3"
-                  required
-                  value={formData.field3}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field4">Dlaczego zdecydowałeś/aś się zostać wolonariuszem w naszej fundacji?</label>
-                <textarea
-                  id="field4"
-                  name="field4"
-                  required
-                  value={formData.field4}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field5">Jakie wartości są dla Ciebie najważniejsze i jak wpłynęły na decyzję o zostaniu wolonariuszem?</label>
-                <textarea
-                  id="field5"
-                  name="field5"
-                  required
-                  value={formData.field5}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field6">Czy preferujesz pracę indywidualną czy zespołową? Dlaczego?</label>
-                <textarea
-                  id="field6"
-                  name="field6"
-                  required
-                  value={formData.field6}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field7">Jakie są Twoje pasje i zainteresowania?</label>
-                <textarea
-                  id="field7"
-                  name="field7"
-                  required
-                  value={formData.field7}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field8">Jakie są Twoje przemyślenia na temat przyszłości naszej fundacji? Jak widzisz naszą organizację za 5 lat?</label>
-                <textarea
-                  id="field8"
-                  name="field8"
-                  required
-                  value={formData.field8}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
-            <div className={styles.formContainer}>
-                <label className={styles.formLabel} htmlFor="field9">Czego według Ciebie potrzebuje nasze społeczństwo, aby stać się lepszym miejscem dla wszystkich?</label>
-                <textarea
-                  id="field9"
-                  name="field9"
-                  required
-                  value={formData.field9}
-                  onChange={handleTextareaChange}
-                  className={`${styles.textfield} ${styles.textfield2}`}
-                />
-            </div>
+            
             <button className={styles.send} type="submit">Wyślij</button>
             </div>
             </form>            

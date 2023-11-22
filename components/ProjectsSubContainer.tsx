@@ -4,14 +4,38 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import styles from './ProjectsSubContainer.module.css';
 import axios from 'axios';
+import LoadingSpinner from "@/components/LoadingSpinner"
 
-const SubContainer = ({key, title, description, link}) => {
+interface ProjectsSubContainerProps {
+  title: string;
+  description: string;
+  link: string;
+}
+
+const ProjectsSubContainer: React.FC<ProjectsSubContainerProps> = ({title, description, link}) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+      const handleImageLoad = () => {
+        setImageLoaded(true);
+      };
+
+      const handleImageError = () => {
+        // Handle image loading error if necessary
+        setImageLoaded(true); // Set imageLoaded to true even in case of an error to avoid infinite loading screen
+      };
 
 
     return (
             <div className={styles.subContainer}>
                 <div className={styles.logoContainer}>
-                    <img className={styles.image} src={link} />
+                    {!imageLoaded && <LoadingSpinner />}
+                    <img
+                        className={`${styles.image} ${imageLoaded ? styles.loaded : styles.hidden}`} // Apply styles based on imageLoaded state
+                        src={link}
+                        onLoad={handleImageLoad}
+                        onError={handleImageError}
+                        alt="Project Image"
+                    />
                 </div>
                 <div className={styles.description}>
                     <p className={styles.pTitle}>{title}</p>
@@ -21,4 +45,4 @@ const SubContainer = ({key, title, description, link}) => {
     );
 }
 
-export default SubContainer;
+export default ProjectsSubContainer;

@@ -1,14 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 
-const MetaTags = ({title}) => {
+interface MetaTagsProps {
+  title: string;
+}
+
+const MetaTags: React.FC<MetaTagsProps> = ({title}) => {
 
 
     return (
         <Head>
             <title>{title}</title>
             <link rel="icon" href="/CPU-lightnings.gif" type="image/x-icon" />
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <meta name="description" content="PCSI - Polskie Centrum Sztucznej Inteligencji" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="author" content="PCSI" />

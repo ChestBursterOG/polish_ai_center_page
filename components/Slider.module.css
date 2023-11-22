@@ -1,0 +1,43 @@
+/* Carousel.module.css */
+.carousel {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .slideContainer {
+    display: flex;
+    
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .slide {
+      flex: 0 0 50%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .slide {
+      flex: 0 0 33.33%;
+    }
+  }
+  

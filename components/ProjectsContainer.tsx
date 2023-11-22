@@ -5,11 +5,24 @@ import {useState, useEffect} from 'react';
 import styles from './ProjectsContainer.module.css';
 import ProjectsSubContainer from "@/components/ProjectsSubContainer"
 import axios from 'axios'
+import LoadingSpinner from "@/components/LoadingSpinner"
+import LoadingContainer from "@/components/LoadingContainer"
+
+interface Record {
+  id: string;
+  fields: {
+    Title: string;
+    Description: string;
+    GraphicLink: string;
+    // Add other fields as needed
+  };
+}
 
 
 const Footer = () => {
 
-    const [records, setRecords] = useState([]);
+    const [records, setRecords] = useState<Record[]>([]);
+    const [loading, setLoading] = useState(true);
 
   useEffect(() => {
   const fetchData = async () => {
@@ -26,6 +39,8 @@ const Footer = () => {
       }
     } catch (error) {
       console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,11 +53,17 @@ const Footer = () => {
     return (
         <div className={styles.mainContainer}>
             <p className={styles.title}>Odkryj fascynujący świat naszych projektów, gdzie technologia spotyka się z innowacją, a pomysły przekształcają się w rzeczywistość. Każdy projekt naszej fundacji to historia pasji, kreatywności i zaangażowania, która inspiruje i zmienia świat.</p>
-            <div>
+            {loading ? (
+              <div className={styles.spinnerBackround} >
+                <LoadingContainer />
+              </div>
+            ) : (
+              <div>
                 {records.map((record, index) => (
-                    <ProjectsSubContainer key={index} title={record.fields.Title} description={record.fields.Description} link={record.fields.GraphicLink} />
+                  <ProjectsSubContainer key={index} title={record.fields.Title} description={record.fields.Description} link={record.fields.GraphicLink} />
                 ))}
-            </div>
+              </div>
+            )}
 
             
         </div>
