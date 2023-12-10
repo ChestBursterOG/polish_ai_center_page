@@ -1,17 +1,33 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import styles from './EntryGraphic.module.css';
 
-const EntryGraphic: React.FC = () => {
-  const isEntryGraphicVisible = (): boolean => {
-    const entryGraphicCookie = document.cookie.replace(/(?:(?:^|.*;\s*)entryGraphicClosed\s*=\s*([^;]*).*$)|^.*$/, '$1');
-    return entryGraphicCookie !== 'true';
-  };
+const useCookieVisibility = (isVisibleCookieName: string) => {
+  // Initialize visibility to false to prevent initial visibility
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const [isVisible, setIsVisible] = useState<boolean>(isEntryGraphicVisible());
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const entryGraphicCookie = document.cookie
+        .split('; ')
+        .find(row => row.trim().startsWith(`${isVisibleCookieName}=`));
+
+      // Default visibility to true only if the cookie is not set
+      const isCookieVisible = entryGraphicCookie ? entryGraphicCookie.split('=')[1] === 'true' : true;
+      setIsVisible(isCookieVisible);
+    }
+  }, [isVisibleCookieName]);
+
+  return [isVisible, setIsVisible] as const;
+};
+
+const EntryGraphic: React.FC = () => {
+  const isVisibleCookieName = 'entryGraphicVisible';
+  const [isVisible, setIsVisible] = useCookieVisibility(isVisibleCookieName);
 
   const handleCloseClick = (): void => {
     setIsVisible(false);
-    document.cookie = 'entryGraphicClosed=true; max-age=3600';
+    document.cookie = `${isVisibleCookieName}=false; path=/; max-age=3600`;
   };
 
   const handleApplyNowClick = (): void => {
@@ -35,8 +51,9 @@ const EntryGraphic: React.FC = () => {
             <div className={styles.details}>
               <p className={styles.subtitle}>Tworzymy innowacje, inspirujemy, poszukujemy pasjonatów!</p>
               <p className={styles.encourage}>Dołącz do nas już dziś!</p>
+              <p className={styles.encourage}>Fundacja Polskie Centrum Sztucznej Inteligencji</p>
               <button className={styles.join} onClick={handleApplyNowClick}>
-                Aplikuj teraz
+                Dołącz do nas!
               </button>
             </div>
           </div>

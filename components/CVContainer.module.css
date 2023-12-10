@@ -115,3 +115,11 @@
 .send:active {
     background: #2474AB;
 }
+
+@media (max-width: 768px){
+
+    .form {
+        width: 90%;
+    }
+
+}

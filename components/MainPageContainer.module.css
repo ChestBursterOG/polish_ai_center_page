@@ -26,7 +26,9 @@
     margin-left: auto;
     margin-right: auto;
     font-family: 'Montserrat';
+    font-weight: bold;
     backdrop-filter: blur(10px);
+
 }
 
 .subContainer {
@@ -140,12 +142,22 @@
 }
 
 .encourageContainer {
-    width: 200px;
+    width: 300px; /* Increased width */
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Increased gap */
     flex-direction: column;
     top: 60%;
+    background: #0000004a;
+    backdrop-filter: blur(10px); /* Changed background for visibility */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Added padding */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Added shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
+
+/* Adding a hover effect to scale the container slightly */
+
+
 
 .eImage {
     
@@ -154,6 +166,11 @@
     border-radius: 20px;
     backdrop-filter: blur(10px);
     
+}
+
+.eImage:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
 }
 
 .encourageMainContainer {
@@ -180,6 +197,7 @@
     background: #33a6f6;
     color: white;
     margin-left: auto;
+    font-weight: bold;
 }
 
 #centerButton {
@@ -244,5 +262,13 @@
     min-width: 400px;
     width: 40%;
     z-index: 600;
+}
+
+@media (max-width: 768px) {
+
+    .encourageContainer {
+        width: 200px;
+    }
+
 }
 

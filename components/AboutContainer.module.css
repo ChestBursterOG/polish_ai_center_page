@@ -112,3 +112,11 @@
     border: 2px solid white;
 }
 
+@media (max-width: 768px) {
+
+    .box {
+        width: 80%;
+    }
+
+}
+

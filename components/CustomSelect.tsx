@@ -1,9 +1,19 @@
-// components/CustomSelect.js
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './CustomSelect.module.css';
 
-const CustomSelect = ({ options, onChange, id, defaultValue }) => {
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface CustomSelectProps {
+  options: Option[];
+  onChange: (id: number, value: string) => void;
+  id: number;
+  defaultValue?: string;
+}
+
+const CustomSelect: React.FC<CustomSelectProps> = ({ options, onChange, id, defaultValue }) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue || '');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,20 +28,19 @@ const CustomSelect = ({ options, onChange, id, defaultValue }) => {
   return (
     <div className={styles.customSelect}>
       <div
-        className={isOpen ? `${styles.select} ${styles.open}` : styles.select}
+        className={`${styles.select} ${isOpen ? styles.open : ''}`}
         onClick={toggleList}
       >
         <div className={styles.selectContain}>
-          {selectedValue || defaultValue}
+          {selectedValue}
         </div>
       </div>
       {isOpen && (
-        <ul className={styles.dropdown}>
+        <ul className={styles.dropdown} onClick={(e) => e.stopPropagation()}>
           {options.map((option) => (
             <li
               key={option.value}
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 setSelectedValue(option.value);
                 onChange(id, option.value);
                 toggleList();

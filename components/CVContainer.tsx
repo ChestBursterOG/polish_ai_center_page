@@ -68,12 +68,12 @@ const Footer = () => {
 
 const handleSelectChange = (id: number, value: string) => {
   setFormData((prevFormData) => {
-    if (id === 0) {
+    if (id === 0) { // Note: Comparing with a string '0'
       return {
         ...prevFormData,
         region: value,
       };
-    } else if (id === 1) {
+    } else if (id === 1) { // Note: Comparing with a string '1'
       return {
         ...prevFormData,
         industry: value,
@@ -85,44 +85,44 @@ const handleSelectChange = (id: number, value: string) => {
 
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // You can handle the form submission logic here, e.g., sending data to a server
-    console.log(formData);
 
-    const dataToSend = {
-      fields: {
-        Name: formData.firstName,
-        Email: formData.email,
-        Region: formData.region,
-        Industry: formData.industry,
-        Message: formData.message,
-        
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  // You can handle the form submission logic here, e.g., sending data to a server
+  console.log(formData);
 
-      },
-    };
-
-    try {
-      // Make a POST request to Airtable
-      const response = await fetch('/api/sendDataToAirTableCVForm', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend),
-      });
-
-      // Clear the form
-      setFormData({
-        firstName: '',
-        email: '',
-        message: '',
-        
-      });
-    } catch (error) {
-      console.error('Error sending data:', error);
-    }
+  const dataToSend = {
+    fields: {
+      Name: formData.firstName,
+      Email: formData.email,
+      Region: formData.region,
+      Industry: formData.industry,
+      Message: formData.message,
+    },
   };
+
+  try {
+    // Make a POST request to Airtable
+    const response = await fetch('/api/sendDataToAirTableCVForm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dataToSend),
+    });
+
+    // Clear the form
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      firstName: '',
+      email: '',
+      message: '',
+    }));
+  } catch (error) {
+    console.error('Error sending data:', error);
+  }
+};
+
 
 
     return (

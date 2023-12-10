@@ -35,16 +35,16 @@ const Navbar = () => {
 							<button className={styles.tabBtn}>Projekty</button>
 						</Link>
 						<Link href="/education">
-							<button className={styles.tabBtn}>Edukacja</button>
+							<button className={styles.tabBtn} id={styles.btn1}>Szkolenia</button>
 						</Link>
 						<Link href="/encourage">
-							<button className={styles.tabBtn} id={styles.btn1}>Wolontariat</button>
+							<button className={styles.tabBtn} id={styles.btn2}>Dołącz do nas</button>
 						</Link>
 						<Link href="/volunteer">
-							<button className={styles.tabBtn}>Kontakt</button>
+							<button className={styles.tabBtn} >Kontakt</button>
 						</Link>
 						<Link href="/join">
-							<button className={styles.tabBtn} id={styles.btn2}>Dołącz do nas</button>
+							<button className={styles.tabBtn} id={styles.btn1}>Rekrutacja</button>
 						</Link>
 					</div>
 					<div className={styles.login}>
@@ -64,16 +64,16 @@ const Navbar = () => {
 							<li className={styles.listElement}>Projekty</li>
 						</Link>
 						<Link href="/education">
-							<li className={styles.listElement}>Edukacja</li>
+							<li className={styles.listElement}>Szkolenia</li>
 						</Link>
 						<Link href="/encourage">
-							<li className={styles.listElement}>Wolontariat</li>
+							<li className={styles.listElement}>Dołącz do nas</li>
 						</Link>
 						<Link href="/volunteer">
 							<li className={styles.listElement}>Kontakt</li>
 						</Link>
 						<Link href="/join">
-							<li className={styles.listElement}>Dołącz do nas</li>
+							<li className={styles.listElement}>Rekrutacja</li>
 						</Link>
 					</ul>
 					}

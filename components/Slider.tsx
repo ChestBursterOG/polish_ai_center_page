@@ -1,16 +1,18 @@
-// Carousel.js
 import { useState, useEffect } from 'react';
-import styles from './Slider.module.css'; // Create a CSS module for styling
+import styles from './Slider.module.css';
 
-const Carousel = ({ images }) => {
+interface CarouselProps {
+  images: string[];
+}
+
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(1);
   const [restartCarousel, setRestartCarousel] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-
-        setRestartCarousel(true);
+      setRestartCarousel(true);
 
       const windowWidth = window.innerWidth;
 
@@ -33,22 +35,19 @@ const Carousel = ({ images }) => {
       // Cleanup event listener on component unmount
       window.removeEventListener('resize', handleResize);
     };
-
   }, []);
-  
+
   useEffect(() => {
     if (restartCarousel) {
-        setCurrentIndex(0);
-        setRestartCarousel(false);
-      }
-      
+      setCurrentIndex(0);
+      setRestartCarousel(false);
+    }
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % (images.length - visibleSlides + 1));
     }, 5000);
 
-
     return () => clearInterval(interval); // Cleanup interval on component unmount
-
   }, [currentIndex, images.length, visibleSlides]);
 
   return (

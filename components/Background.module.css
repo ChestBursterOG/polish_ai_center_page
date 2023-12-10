@@ -30,12 +30,12 @@
 
 .glow {
 	position: absolute;
-	height: 30%;
-	width: 30%;
+	height: 0%;
+	width: 0%;
 	box-shadow:
-    0 0 100px 30px #fff,  /* inner white */
-    0 0 180px 60px #f0f, /* middle magenta */
-    0 0 260px 90px #0ff; /* outer cyan */
+    0 0 100px 50px #fff,  /* inner white */
+    0 0 180px 100px #f0f, /* middle magenta */
+    0 0 260px 150px #0ff; /* outer cyan */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

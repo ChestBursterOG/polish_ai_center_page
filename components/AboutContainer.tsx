@@ -20,12 +20,12 @@ const Footer = () => {
                 <div className={styles.box}>
                     <img className={styles.image} src="/about/education.jpg" />
                     <p className={styles.title}>Wsparcie edukacyjne w IT</p>
-                    <p className={styles.subtitle}>Organizujemy warsztaty i oferujemy materiały edukacyjne, które pomagają zrozumieć skomplikowane zagadnienia IT.</p>
+                    <p className={styles.subtitle}>Organizujemy warsztaty i oferujemy materiały edukacyjne, które pomagają zrozumieć skomplikowane zagadnienia IT</p>
                 </div>
                 <div className={styles.box}>
                     <img className={styles.image} src="/about/career.jpg" />
                     <p className={styles.title}>Wsparcie w rozwoju zawodowym</p>
-                    <p className={styles.subtitle}>Pomagamy w kształtowaniu ścieżki zawodowej, oferując mentoring i wsparcie w rozwoju umiejętności.</p>
+                    <p className={styles.subtitle}>Pomagamy w kształtowaniu ścieżki zawodowej, oferując mentoring i wsparcie w rozwoju umiejętności</p>
                 </div>
                 <div className={styles.box}>
                     <img className={styles.image} src="/about/enterprise.jpg" />

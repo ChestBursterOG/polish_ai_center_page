@@ -6,16 +6,24 @@ import EntryGraphic from './EntryGraphic';
 
 
 const Footer = () => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const initialVisibility = localStorage.getItem('isVisible') === 'true';
+    }
+  }, []);
 
-  const initialVisibility = localStorage.getItem('isVisible') === 'true';
+  
 
     const [isVisible, setVisible] = useState(true);
 
     const images = [
-      './mainpage/development.png',
-      './mainpage/education.png',
-      './mainpage/team.jpg',
-      './mainpage/training.png',
+      './slider/KSZ05911-01.jpeg',
+      './slider/KSZ05834-01.jpeg',
+      './slider/KSZ05852-01.jpeg',
+      './slider/KSZ05869-01.jpeg',
+      './slider/KSZ05899-01.jpeg',
+      './slider/KSZ05905-01.jpeg',
+      
     ];
 
     const scrollDown = () => {
@@ -26,6 +34,18 @@ const Footer = () => {
         top: newScrollPosition,
         behavior: 'smooth',
       });
+    };
+
+    const handleJoinNowClick = (): void => {
+      window.location.href = '/education';
+    };
+
+    const handleApplyNowClick = (): void => {
+      window.location.href = '/join';
+    };
+
+    const handleCheckProjectsClick = (): void => {
+      window.location.href = '/projects';
     };
 
   useEffect(() => {
@@ -45,7 +65,7 @@ const Footer = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('isVisible', isVisible);
+    localStorage.setItem('isVisible', String(isVisible));
   }, [isVisible]);
 
 
@@ -57,11 +77,11 @@ const Footer = () => {
             <div className={styles.encourageMainContainer}>
               <div className={styles.encourageContainer} id={styles.id1}>
                   <img className={styles.eImage} src="/mainpage/signup-training.jpg" />
-                  <button className={styles.eButton}>Zapisz się na szkolenie</button>
+                  <button className={styles.eButton} onClick={handleApplyNowClick}>Zapisz się na szkolenie</button>
               </div>
               <div className={styles.encourageContainer} id={styles.id2}>
                   <img className={styles.eImage} src="/mainpage/team.jpg" />
-                  <button className={styles.eButton}>Dołącz do zespołu</button>
+                  <button className={styles.eButton} onClick={handleJoinNowClick}>Dołącz do zespołu</button>
               </div>
             </div> 
             <div className={`${styles.scrollBackground} ${isVisible ? styles.visible : styles.unvisible}`}>
@@ -87,7 +107,7 @@ const Footer = () => {
 i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłości technologii AI w Polsce.</p>
             <Slider images={images} />
             <div>
-              <button className={styles.eButton} id={styles.centerButton}>Poznaj nasze projekty</button>
+              <button className={styles.eButton} id={styles.centerButton} onClick={handleCheckProjectsClick}>Poznaj nasze projekty</button>
             </div>
             <p className={`${styles.pTitle} ${isVisible ? styles.unvisible : styles.visible}`}>Nasi partnerzy:</p>
             <div className={`${styles.pMainContainer} ${isVisible ? styles.unvisible : styles.visible}`}>

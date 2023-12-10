@@ -1,0 +1,50 @@
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 96%;
+  padding: 2%;
+}
+
+.footerSection {
+  width: 30%;
+  padding: 15px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footerSection {
+    /* Adjust width as needed or remove if 30% width is constant */
+  }
+}
+
+@media (max-width: 768px) {
+  .footerSection {
+    width: 50%; /* Adjust as per design requirement */
+  }
+}
+
+.infoSection {
+  font-size: 0.9rem;
+  color: #818181;
+}
+
+.socialMediaLinks {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.socialMediaLinks a {
+  margin-right: 10px;
+}
+
+.socialMediaLinks img {
+  width: 25px;
+}
+
+.contactText {
+  margin-top: 30px;
+  color: #A0A0A0; /* Adjusted to be consistent with gray-500 */
+}

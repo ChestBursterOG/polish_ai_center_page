@@ -8,9 +8,25 @@ import EducationSubContainer from "@/components/EducationSubContainer"
 import axios from 'axios'
 
 
+interface AirtableRecord {
+  id: string;
+  fields: {
+    Name: string;
+    Date: string;
+    Place: string;
+    Mode: string;
+    Description: string;
+    GraphicLink: string;
+    // Add other fields as needed
+  };
+  createdTime: string;
+}
+
 const Footer = () => {
 
-    const [records, setRecords] = useState<Record[]>([]);
+  
+
+  const [records, setRecords] = useState<AirtableRecord[]>([]);
     const [loading, setLoading] = useState(true);
 
     const handleButtonClick = () => {
@@ -44,7 +60,7 @@ const Footer = () => {
 
     return (
         <div className={styles.mainContainer}>
-        <p className={styles.title}>Witaj w sercu naszych wydarzeń! Nasza fundacja to nie tylko technologia, to także spotkania, warsztaty i inspirujące prelekcje. Odkryj świat możliwości podczas naszych eventów, gdzie innowacyjne pomysły przenoszą się ze słów do czynów</p>
+        <p className={styles.title}>Witaj w sercu naszych wydarzeń! <br />Nasza fundacja to nie tylko technologia, to także spotkania, warsztaty i inspirujące prelekcje. Odkryj świat możliwości podczas naszych eventów, gdzie innowacyjne pomysły przenoszą się ze słów do czynów</p>
         {loading ? (
               <div className={styles.spinnerBackround} >
                 <LoadingContainer />
@@ -55,7 +71,7 @@ const Footer = () => {
                   <EducationSubContainer key={index} title={record.fields.Name} date={record.fields.Date} place={record.fields.Place} mode={record.fields.Mode} description={record.fields.Description} link={record.fields.GraphicLink} />
                 ))}
                 <div className={styles.question}>
-                    <p>Odkryj świat wiedzy na własnych warunkach! Zainicjuj swoją ścieżkę nauki z naszymi indywidualnymi szkoleniami. Zapytaj o dostosowane do Twoich potrzeb eventy edukacyjne już teraz!</p>
+                    <p>Odkryj świat wiedzy na własnych warunkach! <br />Zainicjuj swoją ścieżkę nauki z naszymi indywidualnymi szkoleniami. Zapytaj o dostosowane do Twoich potrzeb eventy edukacyjne już teraz!</p>
                     <button onClick={handleButtonClick} className={styles.ask} type="submit">Zapytaj o szkolenie</button>
                 </div>
               </div>
