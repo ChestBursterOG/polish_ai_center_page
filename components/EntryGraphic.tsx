@@ -51,7 +51,7 @@ const EntryGraphic: React.FC = () => {
             <div className={styles.details}>
               <p className={styles.subtitle}>Tworzymy innowacje, inspirujemy, poszukujemy pasjonatów!</p>
               <p className={styles.encourage}>Dołącz do nas już dziś!</p>
-              <p className={styles.encourage}>Fundacja Polskie Centrum Sztucznej Inteligencji</p>
+              <p className={styles.encourage2}>Fundacja Polskie Centrum Sztucznej Inteligencji</p>
               <button className={styles.join} onClick={handleApplyNowClick}>
                 Dołącz do nas!
               </button>
