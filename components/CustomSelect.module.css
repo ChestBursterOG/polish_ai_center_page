@@ -13,7 +13,7 @@
 	display: flex;
 	width: 100%;
     color: white;
-    background: none;
+    background: #ffffff3a;
     font-size: 18px;
     border-radius: 20px;
     border: none;
@@ -38,7 +38,7 @@
 .dropdown {
 	border: 1px solid black;
 	color: white;
-	background: none;
+	background: #ffffff3a;
 	border-radius: 20px;
 	box-shadow: inset 0 0 5px #5E5E5E;
   max-height: 15vh;

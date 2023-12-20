@@ -6,7 +6,7 @@
 	left: 0;
 	background: radial-gradient(circle, rgba(60,60,104,1) 0%, rgba(6,1,31,1) 100%);
 	align-content: center;
-	z-index: 40;
+	z-index: 5000;
 	display: flex;
 }
 

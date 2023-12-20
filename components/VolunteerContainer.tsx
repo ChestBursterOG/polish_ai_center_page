@@ -75,9 +75,24 @@ const [formData, setFormData] = useState({
               <div className={styles.titleBox}>
                   <p className={styles.title}>Chcesz być częścią rewolucji technologicznej? Dołącz do naszego zespołu wolontariuszy i razem przyczynijmy się do kształtowania przyszłości! Twoje zaangażowanie może sprawić, że technologia stanie się bardziej dostępna dla wszystkich, a nasze innowacje będą miały realny wpływ na społeczeństwo. </p>
               </div>
-              <div className={styles.encourageBox}>
-                  <p className={styles.encourage}>Wypełnij formularz, a nasza fundacja niebawem się z Tobą skontaktuje</p>
-              </div>
+              <div className={styles.subContainer}>
+                
+                <div className={styles.req}>
+                  <div className={styles.reqContainer}>
+                    <img className={styles.image} src="/form/prompt.jpeg" />
+                    <p className={styles.imageTitle}>Zostań prompt inżynierem</p>
+                  </div>
+                  <div className={styles.reqContainer}>
+                    <img className={styles.image} src="/form/programmer.jpeg" />
+                    <p className={styles.imageTitle}>Zostań programistą AI</p>
+                  </div>
+                  <div className={styles.reqContainer}>
+                    <img className={styles.image} src="/form/startups.jpeg" />
+                    <p className={styles.imageTitle}>Otwórz swój startup</p>
+                  </div>
+                  
+                </div>
+            </div>
               <form className={styles.form2} onSubmit={handleSubmit}>
               <div className={styles.form}>
               <div className={styles.formContainer}>
@@ -131,27 +146,7 @@ const [formData, setFormData] = useState({
               </div>
               </form>            
             </div>
-            <div className={styles.subContainer}>
-                
-                <div className={styles.req}>
-                  <div className={styles.reqContainer}>
-                    <img className={styles.image} src="/form/programmer.jpg" />
-                    <p className={styles.imageTitle}>Programisci</p>
-                  </div>
-                  <div className={styles.reqContainer}>
-                    <img className={styles.image} src="/form/employee.jpg" />
-                    <p className={styles.imageTitle}>Pracownicy</p>
-                  </div>
-                  <div className={styles.reqContainer}>
-                    <img className={styles.image} src="/form/apprentice.jpg" />
-                    <p className={styles.imageTitle}>Praktykanci</p>
-                  </div>
-                  <div className={styles.reqContainer}>
-                    <img className={styles.image} src="/form/startup.jpg" />
-                    <p className={styles.imageTitle}>Startupy</p>
-                  </div>
-                </div>
-            </div>
+            
         </div>
     );
 }

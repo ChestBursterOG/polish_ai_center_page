@@ -77,11 +77,11 @@ const Footer = () => {
             <div className={styles.encourageMainContainer}>
               <div className={styles.encourageContainer} id={styles.id1}>
                   <img className={styles.eImage} src="/mainpage/signup-training.jpg" />
-                  <button className={styles.eButton} onClick={handleApplyNowClick}>Zapisz się na szkolenie</button>
+                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleApplyNowClick}>Zapisz się na szkolenie</button>
               </div>
               <div className={styles.encourageContainer} id={styles.id2}>
                   <img className={styles.eImage} src="/mainpage/team.jpg" />
-                  <button className={styles.eButton} onClick={handleJoinNowClick}>Dołącz do zespołu</button>
+                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleJoinNowClick}>Dołącz do zespołu</button>
               </div>
             </div> 
             <div className={`${styles.scrollBackground} ${isVisible ? styles.visible : styles.unvisible}`}>
@@ -91,21 +91,21 @@ const Footer = () => {
               </div>
             <div className={`${styles.subContainer} ${isVisible ? styles.unvisible : styles.visible}`}>
                 <div className={styles.box}>
-                    <img className={styles.image} src="/mainpage/education.png" />
+                    <img className={styles.image} src="/mainpage/image1.jpeg" />
                     <p className={styles.boxTitle}>Rozwój</p>
+                    <button className={styles.button} >Skontaktuj się z nami</button>
                 </div>
                 <div className={styles.box}>
-                    <img className={styles.image} src="/mainpage/development.png" />
+                    <img className={styles.image} src="/mainpage/image2.jpeg" />
                     <p className={styles.boxTitle}>Edukacja</p>
                 </div>
                 <div className={styles.box}>
-                    <img className={styles.image} src="/mainpage/training.png" />
+                    <img className={styles.image} src="/mainpage/image3.jpeg" />
                     <p className={styles.boxTitle}>Szkolenia</p>
                 </div>
             </div>
             <p className={`${styles.description} ${isVisible ? styles.unvisible : styles.visible}`}><b>Polskie Centrum Sztucznej Inteligencji</b> to fundacja, która koncentruje się na promowaniu wiedzy i rozwijaniu kompetencji w zakresie AI wśród polskich instytucji i społeczeństwa. <br /><br />Działając na rzecz edukacji i innowacji, PCSI  angażuje się w różnorodne projekty badawcze, inicjatywy edukacyjne oraz wydarzenia, mające na celu podnoszenie świadomości znaczenia sztucznej inteligencji. Stanowimy platformę współpracy dla naukowców, technologów
 i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłości technologii AI w Polsce.</p>
-            <Slider images={images} />
             <div>
               <button className={styles.eButton} id={styles.centerButton} onClick={handleCheckProjectsClick}>Poznaj nasze projekty</button>
             </div>

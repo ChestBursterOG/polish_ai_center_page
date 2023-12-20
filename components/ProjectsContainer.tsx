@@ -53,6 +53,11 @@ const Footer = () => {
     return (
         <div className={styles.mainContainer}>
             <p className={styles.title}>Odkryj fascynujący świat naszych projektów, gdzie technologia spotyka się z innowacją, a pomysły przekształcają się w rzeczywistość. Każdy projekt naszej fundacji to historia pasji, kreatywności i zaangażowania, która inspiruje i zmienia świat.</p>
+            <div className={styles.mainImages}>
+              <img className={styles.mainImage} src='/projects/projects.jpeg' />
+              <img className={styles.mainImage} src='/projects/projects2.jpeg' />
+            </div>
+            
             {loading ? (
               <div className={styles.spinnerBackround} >
                 <LoadingContainer />
