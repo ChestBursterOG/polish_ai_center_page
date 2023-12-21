@@ -41,12 +41,43 @@
 .engage {
   height: 100%; /* Full height of the button */
   width: 700px; /* 700px width */
-  background-color: #28a745; /* Green background */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column; /* Stack the child divs vertically */
   padding: 10px;
+  background: linear-gradient(to right, #000, transparent 60%); /* Gradient from black to transparent */
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; /* Ensures the positioning context for any pseudo-elements */
+  overflow: hidden; /* Ensures the background doesn't spill out */
+}
+
+/* Creating a pattern that mimics a 'black hole' effect for .engage */
+.engage:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; /* Large width to create an expansive effect */
+  height: 200%; /* Large height to create an expansive effect */
+  background: radial-gradient(circle, transparent 20%, #000 80%); /* Radial gradient for the 'black hole' effect */
+  transform: translate(-50%, -50%) scale(0.5); /* Center and scale the pseudo-element */
+  animation: blackHoleEffect 5s infinite; /* Animation for the 'black hole' effect */
+  z-index: -1;
+}
+
+/* Keyframe animation for the 'black hole' effect */
+@keyframes blackHoleEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
 }
 
 .topDiv {
@@ -87,29 +118,52 @@
   flex-direction: column; /* Stack form elements vertically */
   gap: 10px; /* Spacing between form elements */
   width: 100%; /* Ensure the form takes full width of its parent */
+  margin-top: 60px;
 }
 
+
 .form input[type="text"],
-.form input[type="email"] {
-  padding: 5px;
+.form input[type="email"],
+.form textarea {
+  padding: 10px; /* Increase padding for taller appearance */
   border: 1px solid #ddd;
   border-radius: 3px;
-  width: 90%; /* Set input fields to 80% width of the form */
+  width: 90%; /* Set input fields to 90% width of the parent element */
   margin-left: auto;
   margin-right: auto; /* Center the input fields */
+  color: #fff; /* Set text color */
+  font-size: 16px; /* Set uniform font size for all input fields and textarea */
+}
+
+.form input[type="text"]::placeholder,
+.form input[type="email"]::placeholder,
+.form textarea::placeholder {
+  color: #ddd; /* Change placeholder text color */
+  opacity: 1; /* Ensure the color change is visible */
 }
 
 .form button {
   padding: 5px 10px;
-  background-color: #007bff; /* Blue background for button */
+  background-color: purple;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   width: fit-content; /* Adjust width to fit content */
   margin-left: auto; /* Align button to the right */
+  margin-right: 10%;
 }
 
 .form button:hover {
   background-color: #0056b3; /* Darker blue on hover */
+}
+
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px; /* Adjust height as needed */
 }

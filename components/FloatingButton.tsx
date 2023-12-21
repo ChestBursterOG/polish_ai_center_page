@@ -9,9 +9,24 @@ interface FloatingButtonProps {
 
 const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
   const [showPopup, setShowPopup] = useState(false);
-  const [formInteracted, setFormInteracted] = useState(false); // New state to track form interaction
-
+  const [formInteracted, setFormInteracted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    about: '',
+    organization: '',
+    phone: '',
+    source: ''
+  });
   const text = "NEWSLETTER";
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,11 +56,15 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
       </div>
       <div className={styles.engage}>
         {(showPopup || formInteracted) && ( // Show form if either showPopup is true or form has been interacted with
-          <form className={styles.form} onSubmit={handleSubmit} onClick={handleFormInteraction}>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
-            <button type="submit">Subscribe</button>
-          </form>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Imię*" value={formData.name} onChange={handleInputChange} required />
+          <input type="email" name="email" placeholder="Email*" value={formData.email} onChange={handleInputChange} required />
+          <textarea name="about" placeholder="Opowiedź nam o sobie, czego szukasz? czym się zajmujesz? czym się interesujesz? co teraz robisz?" value={formData.about} onChange={handleInputChange} />
+          <input type="text" name="organization" placeholder="Jaką organizację reprezentujesz?" value={formData.organization} onChange={handleInputChange} />
+          <input type="text" name="phone" placeholder="Telefon" value={formData.phone} onChange={handleInputChange} />
+          <input type="text" name="source" placeholder="Skąd usłyszałeś/usłyszałaś o PCSI?" value={formData.source} onChange={handleInputChange} />
+          <button type="submit">Wyślij</button>
+        </form>
         )}
       </div>
     </button>
