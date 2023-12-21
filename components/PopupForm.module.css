@@ -1,20 +1,27 @@
 /* PopupForm.module.css */
 
 .container {
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -100%; /* Start off the screen */
+  right: 0; /* Initially off the screen */
   width: 300px; /* Adjust width as needed */
   height: 100%;
   background-color: white;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 1001; /* Above the floating button */
-  transition: right 0.3s ease-out;
   overflow-y: auto; /* In case your form is long */
+
+  display: none; /* Hide by default */
+  transform: translateY(-20px); /* Start above its final position */
+  opacity: 0;
+  transition: all 0.3s ease-in-out; /* Transition for transform, opacity, and right */
 }
 
 .visible {
+  display: block; /* Show the container */
   right: 0; /* Slide in to be fully visible */
+  transform: translateY(0); /* Slide to final position */
+  opacity: 1; /* Fade in to full opacity */
 }
 
 .header {

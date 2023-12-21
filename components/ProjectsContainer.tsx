@@ -70,7 +70,6 @@ const Footer = () => {
             </div>
 
             <FloatingButton onClick={floatingButtonFunction}/>
-            <PopupForm visible={true} onClose={popupFormFunction} />
             
             {loading ? (
               <div className={styles.spinnerBackround} >

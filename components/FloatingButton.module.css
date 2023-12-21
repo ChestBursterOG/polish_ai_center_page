@@ -1,10 +1,115 @@
 /* FloatingButton.module.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle&display=swap');
+
 .floatingButton {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* High value to stay on top */
-  /* Add other styling as needed (e.g., padding, background-color) */
+  top: 0; /* Align to the top of the screen */
+  left: 117%; /* Initial position, mostly off-screen */
+  transform: translateX(-50%); /* Adjust horizontal alignment */
+  width: 40%; /* Sets the width to 40% of the viewport */
+  height: 100%; /* Sets the height to 100% of the viewport */
+  z-index: 1000;
+  text-align: center;
+  transition: left 0.5s ease;
+  display: flex;
+  flex-direction: row; /* Place children side by side */
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none; /* Removes any border */
+}
+
+.label, .engage, .topDiv, .middleDiv, .bottomDiv {
+  border: none; /* Removes any border */
+}
+
+.floatingButton:hover {
+  left: 80%; /* New position when hovered */
+}
+
+.label {
+  height: 100%; /* Full height of the button */
+  width: 50px; /* 50px width */
+  background-color: transparent; /* Transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.engage {
+  height: 100%; /* Full height of the button */
+  width: 700px; /* 700px width */
+  background-color: #28a745; /* Green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack the child divs vertically */
+  padding: 10px;
+}
+
+.topDiv {
+  height: 10%; /* 10% of the label div's height */
+  background-color: transparent; /* Transparent background */
+  width: 100%; /* Full width */
+}
+
+.bottomDiv {
+  height: 70%; /* 70% of the label div's height */
+  background-color: transparent; /* Transparent background */
+  width: 100%; /* Full width */
+}
+
+.middleDiv {
+  height: 20%; /* 20% of the label div's height */
+  background-color: purple; /* Purple background */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik Doodle', cursive; /* Rubik Doodle font */
+  color: white;
+  z-index: 2000; /* Higher than any other element within the button */
+  position: relative;
+  flex-direction: column; /* Stack letters vertically */
+  border-top-left-radius: 15px; /* Rounded top-left corner */
+  border-bottom-left-radius: 15px;
+}
+
+.letter {
+  font-size: larger; /* Larger font size */
+  font-weight: bold; /* Bold font weight */
+}
+
+.form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 10px; /* Spacing between form elements */
+  width: 100%; /* Ensure the form takes full width of its parent */
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 90%; /* Set input fields to 80% width of the form */
+  margin-left: auto;
+  margin-right: auto; /* Center the input fields */
+}
+
+.form button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Blue background for button */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: fit-content; /* Adjust width to fit content */
+  margin-left: auto; /* Align button to the right */
+}
+
+.form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
