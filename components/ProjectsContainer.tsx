@@ -7,6 +7,9 @@ import ProjectsSubContainer from "@/components/ProjectsSubContainer"
 import axios from 'axios'
 import LoadingSpinner from "@/components/LoadingSpinner"
 import LoadingContainer from "@/components/LoadingContainer"
+import PupupForm from "@/components/PopupForm"
+import FloatingButton from "@/components/FloatingButton";
+import PopupForm from '@/components/PopupForm';
 
 interface Record {
   id: string;
@@ -47,6 +50,14 @@ const Footer = () => {
   fetchData();
 }, []);
 
+  const floatingButtonFunction = () => {
+
+  }
+
+  const popupFormFunction = () => {
+
+  }
+
 
 
 
@@ -57,6 +68,9 @@ const Footer = () => {
               <img className={styles.mainImage} src='/projects/projects.jpeg' />
               <img className={styles.mainImage} src='/projects/projects2.jpeg' />
             </div>
+
+            <FloatingButton onClick={floatingButtonFunction}/>
+            <PopupForm visible={true} onClose={popupFormFunction} />
             
             {loading ? (
               <div className={styles.spinnerBackround} >

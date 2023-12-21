@@ -77,11 +77,11 @@ const Footer = () => {
             <div className={styles.encourageMainContainer}>
               <div className={styles.encourageContainer} id={styles.id1}>
                   <img className={styles.eImage} src="/mainpage/signup-training.jpg" />
-                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleApplyNowClick}>Zapisz się na szkolenie</button>
+                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleJoinNowClick}>Zapisz się na szkolenie</button>
               </div>
               <div className={styles.encourageContainer} id={styles.id2}>
                   <img className={styles.eImage} src="/mainpage/team.jpg" />
-                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleJoinNowClick}>Dołącz do zespołu</button>
+                  <button className={styles.eButton} id={styles.encourageButton} onClick={handleApplyNowClick}>Dołącz do zespołu</button>
               </div>
             </div> 
             <div className={`${styles.scrollBackground} ${isVisible ? styles.visible : styles.unvisible}`}>

@@ -1,0 +1,35 @@
+/* PopupForm.module.css */
+
+.container {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start off the screen */
+  width: 300px; /* Adjust width as needed */
+  height: 100%;
+  background-color: white;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Above the floating button */
+  transition: right 0.3s ease-out;
+  overflow-y: auto; /* In case your form is long */
+}
+
+.visible {
+  right: 0; /* Slide in to be fully visible */
+}
+
+.header {
+  padding: 20px;
+  background-color: #f5f5f5; /* Header background */
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+}
+
+.closeButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.formContent {
+  padding: 20px;
+}
