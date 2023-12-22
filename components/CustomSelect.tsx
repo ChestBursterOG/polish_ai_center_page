@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './CustomSelect.module.css';
 
 interface Option {
@@ -16,17 +16,36 @@ interface CustomSelectProps {
 const CustomSelect: React.FC<CustomSelectProps> = ({ options, onChange, id, defaultValue }) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue || '');
   const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
 
   const toggleList = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsOpen(false);
   };
 
   useEffect(() => {
     setSelectedValue(defaultValue || '');
   }, [defaultValue]);
 
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(e.target as Node) && isOpen) {
+        closeDropdown();
+      }
+    };
+
+    window.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      window.removeEventListener('click', handleDocumentClick);
+    };
+  }, [isOpen]);
+
   return (
-    <div className={styles.customSelect}>
+    <div className={styles.customSelect} ref={selectRef}>
       <div
         className={`${styles.select} ${isOpen ? styles.open : ''}`}
         onClick={toggleList}

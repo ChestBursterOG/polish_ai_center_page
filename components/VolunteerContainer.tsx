@@ -73,7 +73,7 @@ const [formData, setFormData] = useState({
         <div className={styles.mainContainer}>
           <div className={styles.subContainer}>
               <div className={styles.titleBox}>
-                  <p className={styles.title}>Chcesz być częścią rewolucji technologicznej? Dołącz do naszego zespołu wolontariuszy i razem przyczynijmy się do kształtowania przyszłości! Twoje zaangażowanie może sprawić, że technologia stanie się bardziej dostępna dla wszystkich, a nasze innowacje będą miały realny wpływ na społeczeństwo. </p>
+                  <p className={styles.title}>Chcesz być częścią rewolucji technologicznej?<br/> Dołącz do naszego zespołu wolontariuszy i razem przyczynijmy się do kształtowania przyszłości! Twoje zaangażowanie może sprawić, że technologia stanie się bardziej dostępna dla wszystkich, a nasze innowacje będą miały realny wpływ na społeczeństwo. </p>
               </div>
               <div className={styles.subContainer}>
                 

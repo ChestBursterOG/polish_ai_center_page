@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={styles.titleBox}>
-                <p>Nasz zespół:</p>
+                <p>Zarząd i Rada fundacji:</p>
             </div>
             <div className={styles.subContainer}>
                 <div className={styles.box2}>
@@ -69,6 +69,10 @@ const Footer = () => {
                     <p className={styles.boxTitle2}>Katarzyna Szawłoga</p>
                 </div>
             </div>
+            <div className={styles.titleBox}>
+                <p>Trenerzy:</p>
+            </div>
+            
         </div>
     );
 }

@@ -93,9 +93,10 @@
 }
 
 .middleDiv {
-  height: 20%; /* 20% of the label div's height */
+  height: 300px; /* 20% of the label div's height */
   background-color: purple; /* Purple background */
   width: 100%; /* Full width */
+  min-width: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,6 +120,7 @@
   gap: 10px; /* Spacing between form elements */
   width: 100%; /* Ensure the form takes full width of its parent */
   margin-top: 60px;
+  
 }
 
 
@@ -131,14 +133,15 @@
   width: 90%; /* Set input fields to 90% width of the parent element */
   margin-left: auto;
   margin-right: auto; /* Center the input fields */
-  color: #fff; /* Set text color */
+  color: #000000; /* Set text color */
   font-size: 16px; /* Set uniform font size for all input fields and textarea */
+  
 }
 
 .form input[type="text"]::placeholder,
 .form input[type="email"]::placeholder,
 .form textarea::placeholder {
-  color: #ddd; /* Change placeholder text color */
+  color: #858585; /* Change placeholder text color */
   opacity: 1; /* Ensure the color change is visible */
 }
 

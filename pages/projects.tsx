@@ -8,10 +8,12 @@ import '../styles/globals.css'
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import LoadingScreenController from "@/components/LoadingScreenController"
 import MetaTags from "@/components/MetaTags"
+import Layout from "@/components/Layout"
 
 export default function Home() {
   return (
     <main className={styles.mainContainer}>
+      <Layout>
     <MetaTags title="Projekty" />
       <GoogleAnalytics />
       <LoadingScreenController />
@@ -19,6 +21,7 @@ export default function Home() {
       <Navbar />
       <ProjectsContainer />
       <Footer />
+      </Layout>
 
     </main>
   )
