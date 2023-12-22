@@ -171,6 +171,19 @@
   height: 100px; /* Adjust height as needed */
 }
 
+/* ... existing styles ... */
+
+.floatingButton:hover .engage,
+.floatingButton .engage:focus-within {
+  /* Keep the engage div visible when the floatingButton is hovered
+     or when any element inside engage is focused */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ... rest of your CSS ... */
+
+
 @media (max-width: 768px) { /* Adjust the max-width value based on your requirements */
   .floatingButton {
     width: 80%;

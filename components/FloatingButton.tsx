@@ -1,5 +1,3 @@
-// FloatingButton.tsx
-
 import React, { useState } from 'react';
 import styles from './FloatingButton.module.css';
 
@@ -30,49 +28,23 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted"); // Replace with actual form submission logic
+    console.log("Form Submitted");
     setFormInteracted(false);
 
-    const dataToSend = {
-      fields: {
-        Name: formData.name,
-        Email: formData.email,
-        About: formData.about,
-        Organization: formData.organization,
-        Phone: formData.phone, // Fixed duplicated 'About' key
-        Source: formData.source // Fixed duplicated 'About' key
-      }
-    };
-
-    try {
-      // Make a POST request to Airtable
-      const response = await fetch('/api/sendDataToAirTableNewsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend),
-      });
-
-      // Clear the form
-      setFormData({
-        name: '',
-        email: '',
-        about: '',
-        organization: '',
-        phone: '',
-        source: ''
-      });
-    } catch (error) {
-      console.error('Error sending data:', error);
-    } finally {
-      // Reset the form interaction state after submission
-      setFormInteracted(false);
-    }
+    setFormData({
+      name: '',
+      email: '',
+      about: '',
+      organization: '',
+      phone: '',
+      source: ''
+    });
   };
 
-  const handleFormInteraction = () => {
-    setFormInteracted(true); // Set form interaction state to true when the form is interacted with
+  const handleMouseLeave = () => {
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 300);
   };
 
   return (
@@ -80,7 +52,7 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
       className={styles.floatingButton}
       onClick={onClick}
       onMouseEnter={() => setShowPopup(true)}
-      onMouseLeave={() => !formInteracted && setShowPopup(false)} // Only hide popup if form has not been interacted with
+      onMouseLeave={handleMouseLeave}
     >
       <div className={styles.label}>
         <div className={styles.topDiv}></div>
@@ -92,14 +64,14 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
         <div className={styles.bottomDiv}></div>
       </div>
       <div className={styles.engage}>
-        {(showPopup || formInteracted) && ( // Show form if either showPopup is true or form has been interacted with
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Imię*" value={formData.name} onChange={handleInputChange} required />
-            <input type="email" name="email" placeholder="Email*" value={formData.email} onChange={handleInputChange} required />
-            <textarea name="about" placeholder="Opowiedź nam o sobie, czego szukasz? czym się zajmujesz? czym się interesujesz? co teraz robisz?" value={formData.about} onChange={handleInputChange} />
-            <input type="text" name="organization" placeholder="Jaką organizację reprezentujesz?" value={formData.organization} onChange={handleInputChange} />
-            <input type="text" name="phone" placeholder="Telefon" value={formData.phone} onChange={handleInputChange} />
-            <input type="text" name="source" placeholder="Skąd usłyszałeś/usłyszałaś o PCSI?" value={formData.source} onChange={handleInputChange} />
+        {(showPopup || formInteracted) && (
+          <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
+            <input type="text" name="name" placeholder="Imię*" value={formData.name} onChange={handleInputChange} required autoComplete="off" />
+            <input type="email" name="email" placeholder="Email*" value={formData.email} onChange={handleInputChange} required autoComplete="off" />
+            <textarea name="about" placeholder="Opowiedź nam o sobie..." value={formData.about} onChange={handleInputChange} autoComplete="off" />
+            <input type="text" name="organization" placeholder="Organizacja" value={formData.organization} onChange={handleInputChange} autoComplete="off" />
+            <input type="text" name="phone" placeholder="Telefon" value={formData.phone} onChange={handleInputChange} autoComplete="off" />
+            <input type="text" name="source" placeholder="Źródło" value={formData.source} onChange={handleInputChange} autoComplete="off" />
             <button type="submit">Wyślij</button>
           </form>
         )}
