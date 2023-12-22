@@ -170,3 +170,19 @@
   margin-right: auto;
   height: 100px; /* Adjust height as needed */
 }
+
+@media (max-width: 768px) { /* Adjust the max-width value based on your requirements */
+  .floatingButton {
+    width: 80%;
+    left: 130%;
+  }
+  
+  .engage {
+    width: 100%; /* Set width to 80% for low resolution screens */
+  }
+
+  .floatingButton:hover {
+    left: 60%; /* Adjust this value for smaller screens */
+  }
+
+}
