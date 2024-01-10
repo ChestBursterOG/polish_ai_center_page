@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Background from "@/components/Background"
 import EncourageContainer from "@/components/EncourageContainer"
+import CVContainer from "@/components/CVContainer"
 import '../styles/globals.css'
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import Layout from "@/components/Layout"
@@ -17,6 +18,7 @@ export default function Home() {
         <GoogleAnalytics />
         <Background />
         <EncourageContainer />
+        <CVContainer />
       </Layout>
     </main>
   )

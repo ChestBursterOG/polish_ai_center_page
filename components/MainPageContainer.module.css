@@ -54,6 +54,10 @@
     padding: 20px;
 }
 
+.box:hover {
+    background: #00000077;
+}
+
 .image {
     width: 100%;
     border: 3px solid white;
@@ -139,10 +143,16 @@
     border-radius: 20px;
     backdrop-filter: blur(10px);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 
 .encourageContainer {
-    width: 300px; /* Increased width */
+    width: 250px; /* Increased width */
     display: flex;
     gap: 30px; /* Increased gap */
     flex-direction: column;
@@ -269,11 +279,78 @@
     width: 40%;
     z-index: 600;
     position: relative;
+    background-color: purple;
 }
 
 #encourageButton {
     z-index: 6000;
     position: relative;
+}
+
+.icon {
+    width: 150px;
+    height: auto;
+}
+
+.iconscontainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.projects {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    max-width: 1500px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.projects:hover {
+    background: #00000077;
+}
+
+.aiassistantscontainer {
+    width: 400px;
+    border: 2px solid white;
+    background: #0000004a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aiassistantscontainer:hover {
+    background: #00000077;
+}
+
+.pcsititle {
+    font-size: 22px;
 }
 
 @media (max-width: 768px) {
@@ -316,6 +393,11 @@
         margin-right: auto;
     }
 
+}
 
+@media (min-width: 2000px){
+    .encourageContainer {
+        width: 500px;
+    }
 }
 

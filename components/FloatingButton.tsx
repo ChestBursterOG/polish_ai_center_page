@@ -66,6 +66,8 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ onClick }) => {
       <div className={styles.engage}>
         {(showPopup || formInteracted) && (
           <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
+            <p className={styles.title}>Dołącz do naszej społeczności! </p>
+            <p className={styles.description}>Zapisz się na newsletter i bądź na bieżąco z działalnością naszej fundacji. Co miesiąc otrzymasz informacje o projektach, wydarzeniach i osiągnięciach, które razem tworzymy dla lepszej przyszłości!</p>
             <input type="text" name="name" placeholder="Imię*" value={formData.name} onChange={handleInputChange} required autoComplete="off" />
             <input type="email" name="email" placeholder="Email*" value={formData.email} onChange={handleInputChange} required autoComplete="off" />
             <textarea name="about" placeholder="Opowiedź nam o sobie..." value={formData.about} onChange={handleInputChange} autoComplete="off" />

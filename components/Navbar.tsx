@@ -43,9 +43,6 @@ const Navbar = () => {
 						<Link href="/volunteer">
 							<button className={styles.tabBtn} >Kontakt</button>
 						</Link>
-						<Link href="/join">
-							<button className={styles.tabBtn} id={styles.btn1}>Rekrutacja</button>
-						</Link>
 					</div>
 					<div className={styles.login}>
 						<button className={styles.loginBtn}>Login</button>
@@ -71,9 +68,6 @@ const Navbar = () => {
 						</Link>
 						<Link href="/volunteer">
 							<li className={styles.listElement}>Kontakt</li>
-						</Link>
-						<Link href="/join">
-							<li className={styles.listElement}>Rekrutacja</li>
 						</Link>
 					</ul>
 					}

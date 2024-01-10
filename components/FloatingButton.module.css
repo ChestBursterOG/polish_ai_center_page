@@ -183,6 +183,19 @@
 
 /* ... rest of your CSS ... */
 
+.title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.description {
+  color: white;
+  font-size: 16px;
+  background-color: #000;
+  margin-bottom: 30px;
+
+}
 
 @media (max-width: 768px) { /* Adjust the max-width value based on your requirements */
   .floatingButton {

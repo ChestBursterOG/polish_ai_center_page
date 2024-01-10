@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import styles from './MainPageContainer.module.css';
 import Slider from '@/components/Slider';
 import EntryGraphic from './EntryGraphic';
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -73,7 +74,10 @@ const Footer = () => {
         <div className={styles.mainContainer}>
           <EntryGraphic/>
             <p className={styles.title}>Tworzymy przyszłość dzięki sztucznej inteligencji</p>
-            <p className={styles.subtitle}>Przekraczamy granice wiedzy, by uczynić technologię dostępną dla każdego. Nasza fundacja buduje nową erę innowacji i edukacji</p>        
+            <Link href="/projects" className={styles.aiassistantscontainer}>
+                <img className={styles.icon} src="/mainpage/AppUses5.png" />
+                <p className={styles.boxTitle}>Asystenci AI dla firm</p>
+            </Link>
             <div className={styles.encourageMainContainer}>
               <div className={styles.encourageContainer} id={styles.id1}>
                   <img className={styles.eImage} src="/mainpage/signup-training.jpg" />
@@ -90,25 +94,52 @@ const Footer = () => {
               </div>
               </div>
             <div className={`${styles.subContainer} ${isVisible ? styles.unvisible : styles.visible}`}>
-                <div className={styles.box}>
-                    <img className={styles.image} src="/mainpage/image1.jpeg" />
-                    <p className={styles.boxTitle}>Rozwój</p>
-                    <button className={styles.button} >Skontaktuj się z nami</button>
-                </div>
+                <Link href="/encourage">
+                  <div className={styles.box}>
+                      <img className={styles.image} src="/mainpage/image1(alpha).png" />
+                      <p className={styles.boxTitle}>Dołącz do nas</p>
+                  </div>
+                </Link>
+
                 <div className={styles.box}>
                     <img className={styles.image} src="/mainpage/image2.jpeg" />
-                    <p className={styles.boxTitle}>Edukacja</p>
+                    <p className={styles.boxTitle}>Asystenci AI</p>
                 </div>
-                <div className={styles.box}>
-                    <img className={styles.image} src="/mainpage/image3.jpeg" />
-                    <p className={styles.boxTitle}>Szkolenia</p>
+                <Link href="/education">
+                  <div className={styles.box}>
+                      <img className={styles.image} src="/mainpage/image3.jpeg" />
+                      <p className={styles.boxTitle}>Szkolenia</p>
+                  </div>
+                </Link>
+            </div>
+            <div className={`${styles.description} ${isVisible ? styles.unvisible : styles.visible}`}>
+              <p className={styles.pcsititle}><b>Polskie Centrum Sztucznej Inteligencji</b></p>
+              <div className={styles.iconscontainer}>
+                <div>
+                  <img className={styles.icon} src="/mainpage/projects.png" />
+                  <p className={styles.boxTitle}>Projekty badawcze</p>
                 </div>
+                <div>
+                  <img className={styles.icon} src="/mainpage/educationgraphic.png" />
+                  <p className={styles.boxTitle}>Nowy system edukacji</p>
+                </div>
+                <div>
+                  <img className={styles.icon} src="/mainpage/events.png" />
+                  <p className={styles.boxTitle}>Eventy</p>
+                </div>
+              </div>
+              <br />Stanowimy platformę współpracy dla naukowców, technologów
+                  i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłości technologii AI w Polsce.
             </div>
-            <p className={`${styles.description} ${isVisible ? styles.unvisible : styles.visible}`}><b>Polskie Centrum Sztucznej Inteligencji</b> to fundacja, która koncentruje się na promowaniu wiedzy i rozwijaniu kompetencji w zakresie AI wśród polskich instytucji i społeczeństwa. <br /><br />Działając na rzecz edukacji i innowacji, PCSI  angażuje się w różnorodne projekty badawcze, inicjatywy edukacyjne oraz wydarzenia, mające na celu podnoszenie świadomości znaczenia sztucznej inteligencji. Stanowimy platformę współpracy dla naukowców, technologów
-i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłości technologii AI w Polsce.</p>
-            <div>
-              <button className={styles.eButton} id={styles.centerButton} onClick={handleCheckProjectsClick}>Poznaj nasze projekty</button>
-            </div>
+            
+            <Link href="/projects" className={styles.projects}>
+                <img className={styles.icon} src="/mainpage/AppUses1.png" />
+                <p className={styles.boxTitle}>Tutaj powstają nasze projekty.</p>
+                <p>Sprawdź nad czym pracujemy!</p>
+            </Link>
+            {/*}
+            <Slider images={images} />
+            
             <p className={`${styles.pTitle} ${isVisible ? styles.unvisible : styles.visible}`}>Nasi partnerzy:</p>
             <div className={`${styles.pMainContainer} ${isVisible ? styles.unvisible : styles.visible}`}>
                 <div className={styles.pContainer}>
@@ -118,6 +149,7 @@ i przedsiębiorców, którzy wspólnie pracują nad kształtowaniem przyszłośc
                     <img className={styles.pImage} src="/logos/napotege.png" />
                 </div>
             </div>
+        */}
         </div>
     );
 }
